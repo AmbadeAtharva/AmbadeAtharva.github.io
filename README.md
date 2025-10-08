@@ -1,73 +1,137 @@
-# Welcome to your Lovable project
+# Atharva Ambade - Portfolio Website
 
-## Project info
+A modern, responsive portfolio website showcasing my experience as a Software Engineer, Back-End Architect, and Cloud Engineer.
 
-**URL**: https://lovable.dev/projects/81bdbbf2-913e-41e0-b1da-cab73b158da9
+## 🚀 Features
 
-## How can I edit this code?
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Animated Background**: Dynamic floating shapes and gradient effects
+- **Modern UI**: Built with shadcn/ui components and Tailwind CSS
+- **Fast Performance**: Powered by Vite for lightning-fast development and builds
+- **Type-Safe**: Written in TypeScript for better code quality
 
-There are several ways of editing your application.
+## 🛠️ Technologies Used
 
-**Use Lovable**
+- **Frontend Framework**: React 18
+- **Build Tool**: Vite
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui (Radix UI)
+- **Icons**: Lucide React
+- **Routing**: React Router DOM
+- **State Management**: TanStack Query
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/81bdbbf2-913e-41e0-b1da-cab73b158da9) and start prompting.
+## 📦 Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v18 or higher)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Setup
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+1. Clone the repository:
+```bash
 git clone <YOUR_GIT_URL>
+cd personal-port-scraper
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open your browser and navigate to `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🏗️ Build for Production
 
-**Use GitHub Codespaces**
+To create a production build:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run build
+```
 
-## What technologies are used for this project?
+The built files will be in the `dist` directory.
 
-This project is built with:
+To preview the production build locally:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+npm run preview
+```
 
-## How can I deploy this project?
+## 📁 Project Structure
 
-Simply open [Lovable](https://lovable.dev/projects/81bdbbf2-913e-41e0-b1da-cab73b158da9) and click on Share -> Publish.
+```
+personal-port-scraper/
+├── public/              # Static assets
+│   ├── Professional photo.png
+│   ├── Resume_Master.pdf
+│   └── favicon.ico
+├── src/
+│   ├── components/      # React components
+│   │   ├── ui/         # shadcn/ui components
+│   │   ├── Hero.tsx
+│   │   ├── Skills.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Education.tsx
+│   │   ├── Footer.tsx
+│   │   └── AnimatedBackground.tsx
+│   ├── pages/          # Page components
+│   │   ├── Index.tsx
+│   │   └── NotFound.tsx
+│   ├── lib/            # Utility functions
+│   ├── App.tsx         # Main app component
+│   ├── main.tsx        # Entry point
+│   └── index.css       # Global styles
+├── index.html
+├── package.json
+├── tailwind.config.ts
+├── tsconfig.json
+└── vite.config.ts
+```
 
-## Can I connect a custom domain to my Lovable project?
+## 🎨 Customization
 
-Yes, you can!
+### Colors
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+The color scheme can be customized in `src/index.css` by modifying the CSS variables:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```css
+:root {
+  --primary: 220 90% 56%;
+  --secondary: 280 70% 60%;
+  --accent: 260 80% 65%;
+  /* ... other colors */
+}
+```
+
+### Content
+
+Update the content in the respective component files:
+- Personal info: `src/components/Hero.tsx`
+- Skills: `src/components/Skills.tsx`
+- Experience: `src/components/Experience.tsx`
+- Projects: `src/components/Projects.tsx`
+- Education: `src/components/Education.tsx`
+
+## 📄 License
+
+This project is private and proprietary.
+
+## 👤 Author
+
+**Atharva Ambade**
+- LinkedIn: [linkedin.com/in/ambadeatharva](https://linkedin.com/in/ambadeatharva)
+- GitHub: [github.com/AmbadeAtharva](https://github.com/AmbadeAtharva)
+- Email: ambade.atharva@outlook.com
+- Location: San Jose, CA
+
+## 🤝 Contributing
+
+This is a personal portfolio project and is not open for contributions.

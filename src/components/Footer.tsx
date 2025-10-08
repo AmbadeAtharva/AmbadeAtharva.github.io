@@ -58,6 +58,13 @@ const Footer = () => {
               >
                 Projects
               </button>
+              <a
+                href="/Resume_Master.pdf"
+                download="Atharva_Ambade_Resume.pdf"
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Download Resume
+              </a>
             </div>
           </div>
 

@@ -1,18 +1,25 @@
-import { Mail, MapPin, Phone, Linkedin, Github } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, Github, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 py-20">
       <div className="max-w-4xl w-full text-center animate-fade-in">
-        {/* Profile Image Placeholder */}
-        <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-primary shadow-soft flex items-center justify-center text-6xl font-bold text-white">
-          AA
+        {/* Profile Image */}
+        <div className="w-64 h-64 md:w-72 md:h-72 mx-auto mb-8 rounded-full shadow-soft overflow-hidden border-4 border-primary/20">
+          <img 
+            src="/Professional photo.png" 
+            alt="Atharva Ambade" 
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Name and Title */}
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-          👋 Hey, I'm Atharva Ambade
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 pb-2">
+          <span className="inline-block animate-wave origin-[70%_70%]">👋</span>{" "}
+          <span className="bg-gradient-primary bg-clip-text text-transparent">
+            Hey, I'm Atharva Ambade
+          </span>
         </h1>
         
         <p className="text-2xl md:text-3xl text-foreground/80 mb-6">
@@ -64,6 +71,17 @@ const Hero = () => {
 
         {/* Navigation Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
+          <Button
+            variant="default"
+            size="lg"
+            className="rounded-full px-8 bg-primary text-primary-foreground hover:bg-primary/90 transition-smooth"
+            asChild
+          >
+            <a href="/Resume_Master.pdf" download="Atharva_Ambade_Resume.pdf" className="flex items-center gap-2">
+              <Download className="w-5 h-5" />
+              Download Resume
+            </a>
+          </Button>
           <Button
             variant="outline"
             size="lg"
