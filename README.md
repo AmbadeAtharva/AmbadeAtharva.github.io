@@ -135,3 +135,5 @@ This project is private and proprietary.
 ## 🤝 Contributing
 
 This is a personal portfolio project and is not open for contributions.
+
+''
