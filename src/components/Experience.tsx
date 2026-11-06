@@ -1,82 +1,82 @@
-import { Card } from "@/components/ui/card";
-import { Briefcase, Calendar } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness } from "lucide-react";
 
 const experiences = [
   {
-    title: "Software Developer Engineer Assistant",
-    company: "California State University - East Bay",
-    period: "September 2024 - Present",
-    location: "San Jose, CA",
-    highlights: [
-      "Enhanced university website UI using React.js and Express, increasing traffic by 50% and engagement by 25%",
-      "Implemented OAuth 2.0 and MFA, fortifying system security and safeguarding user data",
-      "Integrated MySQL and Apache Kafka for real-time data streaming, optimizing query performance by 30%",
-      "Implemented system monitoring with Prometheus and Grafana, reducing incident response time by 35%",
-      "Built CI/CD pipelines using GitHub Actions and ArgoCD, improving release efficiency and reducing downtime by 40%"
-    ]
+    period: "MAR 2026 — PRESENT",
+    company: "Oatmeal AI / Oatmeal Farm Network",
+    role: "Founding AI Engineer",
+    location: "Remote · San Francisco, CA",
+    intro: "Taking an agricultural advisory product from prototype to production across a hybrid cloud architecture.",
+    bullets: [
+      "Led Agent Charlie, a multi-agent assistant supporting 30+ agricultural users, using LangGraph, FastAPI, and specialized routing nodes.",
+      "Reduced AI inference costs 40% through custom memory architecture, context pruning, and structured inter-agent communication.",
+      "Built retrieval grounding with Firestore vector search and Pinecone, improving long-running conversation context retention by 35%.",
+      "Deployed asynchronous AI services on Azure Container Apps with Celery and streaming responses, achieving 99.5% uptime.",
+    ],
+    accent: "current",
   },
   {
-    title: "Software Development Engineer Analyst",
+    period: "AUG 2025 — JUL 2026",
+    company: "Berkshire Hathaway",
+    role: "AI / ML Engineer",
+    location: "San Jose, CA",
+    intro: "Designed AI and cloud infrastructure for educational and policy-risk applications.",
+    bullets: [
+      "Architected cloud infrastructure for two AI-powered educational applications using Gemini 2.5 Flash Lite, Vertex AI, GCP, and Firebase.",
+      "Engineered a recommendation engine serving 1,000+ daily requests, reducing task-selection time 25% and increasing completion rates 20%.",
+      "Built modular matching, semantic search, and vector retrieval systems while establishing evaluation and observability pipelines.",
+    ],
+  },
+  {
+    period: "SEP 2024 — MAY 2026",
+    company: "California State University, East Bay",
+    role: "Software Engineer · AI/ML Research",
+    location: "Hayward, CA",
+    intro: "Built reliable administrative systems while researching applied ML and edge-efficient model architectures.",
+    bullets: [
+      "Migrated legacy portal pages to React and TailwindCSS, raising Lighthouse performance from 65 to 95 and cutting LCP from 4.2s to 1.2s.",
+      "Developed PyTorch anomaly detection for 50,000+ admissions records, flagging 2,000+ ghost student profiles.",
+      "Implemented binary neural networks and stochastic thresholding, reducing memory footprint 85% while maintaining 94% validation accuracy.",
+      "Built a RAG teacher agent across 60+ curriculum units and evaluated 305 prompts at 83% classification accuracy and 81% Macro F1.",
+    ],
+  },
+  {
+    period: "JAN 2022 — JUN 2024",
     company: "Accenture",
-    period: "January 2022 - June 2024",
+    role: "Software Engineer · DevOps",
     location: "Remote",
-    highlights: [
-      "Improved data retrieval latency by 30% through strategic indexing and query optimization on IBM Db2 mainframe databases handling 10,000+ daily transactions",
-      "Led legacy modernization initiative migrating COBOL mainframes to AWS, cutting infrastructure costs by 35%",
-      "Boosted automated batch job scheduling with Control-M, reducing failure rates by 40%",
-      "Configured Spring Boot microservices with Spring Security and IAM policies, reducing vulnerabilities by 40%",
-      "Leveraged Splunk for real-time log analysis, reducing incident resolution time by 40%"
-    ]
-  }
+    intro: "Operated at enterprise scale across financial data, cloud infrastructure, and event-driven services.",
+    bullets: [
+      "Orchestrated Apache Spark and Airflow ETL pipelines, migrating 15TB+ of transactional data into Amazon Redshift for ML ingestion.",
+      "Built event streaming architectures with Kafka and Kinesis for onboarding workflows serving a 2M-customer retail banking base.",
+      "Extended Jenkins and Terraform delivery pipelines with automated testing and rolling deployments, reducing lead time from two days to four hours.",
+    ],
+  },
 ];
 
-const Experience = () => {
-  return (
-    <section id="experience" className="py-20 px-4 bg-card/30">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            Professional Experience
-          </h2>
-        </div>
-
-        <div className="space-y-8">
-          {experiences.map((exp, idx) => (
-            <Card
-              key={idx}
-              className="p-8 hover:shadow-soft transition-smooth hover:-translate-y-1 bg-card/80 backdrop-blur-sm border-2"
-            >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                <div className="flex items-start gap-4 mb-4 md:mb-0">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-white flex-shrink-0">
-                    <Briefcase className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground">{exp.title}</h3>
-                    <p className="text-lg text-primary font-semibold">{exp.company}</p>
-                    <p className="text-sm text-muted-foreground">{exp.location}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Calendar className="w-4 h-4" />
-                  <span className="text-sm font-medium">{exp.period}</span>
-                </div>
-              </div>
-
-              <ul className="space-y-3 ml-16">
-                {exp.highlights.map((highlight, hIdx) => (
-                  <li key={hIdx} className="flex items-start gap-3 text-foreground/80">
-                    <span className="text-primary font-bold mt-1">•</span>
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+const Experience = () => (
+  <section id="work" className="section experience-section">
+    <div className="section-heading split-heading">
+      <div><p className="section-kicker">02 / Selected experience</p><h2>Where the work <span>compounds.</span></h2></div>
+      <p className="heading-aside">A career built across enterprise infrastructure, applied research, and production AI.</p>
+    </div>
+    <div className="experience-list">
+      {experiences.map((experience) => (
+        <article className={`experience-item ${experience.accent ?? ""}`} key={experience.company}>
+          <div className="experience-marker"><BriefcaseBusiness size={15} /></div>
+          <div className="experience-meta"><span>{experience.period}</span><small>{experience.location}</small></div>
+          <div className="experience-content">
+            <div className="role-line"><h3>{experience.company}</h3><span>{experience.role}</span></div>
+            <p className="experience-intro">{experience.intro}</p>
+            <ul>{experience.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+          </div>
+        </article>
+      ))}
+    </div>
+    <a className="text-link" href="https://www.linkedin.com/in/ambadeatharva" target="_blank" rel="noopener noreferrer">
+      More on LinkedIn <ArrowUpRight size={16} />
+    </a>
+  </section>
+);
 
 export default Experience;
