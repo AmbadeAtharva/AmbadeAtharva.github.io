@@ -1,108 +1,88 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Code2, Database, Brain, Shield } from "lucide-react";
+import { ArrowUpRight, Cpu, FileSearch, GitBranch, Layers3, LockKeyhole, Zap } from "lucide-react";
 
 const projects = [
   {
-    title: "Atlassian & Slack Model Context Protocol (MCP) Server",
-    icon: Code2,
-    tags: ["Python", "MCP", "Jira", "Confluence", "Llama 3.2", "Slack"],
-    description: "Developed a Model Context Protocol server with full CRUD operations for Atlassian Jira and Confluence, automating ticket and page management.",
-    highlights: [
-      "Reduced manual task time by over 70%",
-      "Integrated Llama 3.2 for natural language interface via Slack bot",
-      "Achieved 95% success rate in command interpretation"
-    ]
+    number: "01",
+    title: "Concurrent Document Processor",
+    type: "Systems / Rust",
+    description: "Memory-conscious pipeline that cleans, chunks, and streams large text corpora into Pinecone-compatible JSONL for vector ingestion.",
+    result: "73.9% lower latency · 3.88× throughput",
+    stack: "Rust · Rayon · Serde · JSONL",
+    icon: Zap,
+    href: "https://github.com/AmbadeAtharva/concurrent-document-processor",
   },
   {
-    title: "Knowledge Graph for Research Papers",
-    icon: Database,
-    tags: ["Neo4j", "Streamlit", "Graph Queries", "Python"],
-    description: "Designed a Neo4j-based knowledge graph that accelerated keyword retrieval by 30% and improved citation analysis by 10x.",
-    highlights: [
-      "Enhanced research insights and literature discovery",
-      "Interactive UI for real-time search of research trends",
-      "Improved user engagement by 50%"
-    ]
+    number: "02",
+    title: "GPU Inference Engine",
+    type: "Hardware / C++",
+    description: "Custom tiled matrix multiplication kernels with shared-memory reuse, ported between NVIDIA CUDA and AMD ROCm/HIP.",
+    result: "~30% lower kernel latency",
+    stack: "C++ · CUDA · AMD ROCm · HIP",
+    icon: Cpu,
+    href: "https://github.com/AmbadeAtharva/GPU-Inference-Engine",
   },
   {
-    title: "Plagiarism and Exam Cheating Detection",
-    icon: Brain,
-    tags: ["Computer Vision", "Deep Learning", "Flask", "AI", "Cloud"],
-    description: "Developed an AI-powered exam monitoring system using real-time computer vision model with 95% accuracy.",
-    highlights: [
-      "Detects screen lookaways, mobile phone use, and headphone detection",
-      "Reduced cheating incidents by 60%",
-      "Refactored detection time by 40%"
-    ]
+    number: "03",
+    title: "Slate LMS",
+    type: "Product / AI platform",
+    description: "AI-first learning platform with role-specific workflows and schema-constrained content generation for students, teachers, and administrators.",
+    result: "Multi-LLM orchestration",
+    stack: "FastAPI · PostgreSQL · Redis · LangChain",
+    icon: Layers3,
+    href: "https://slatelms.in/",
   },
   {
-    title: "Smart Calorie Counter",
-    icon: Shield,
-    tags: ["MLOps", "Docker", "EKS", "Terraform", "CNN", "Prometheus"],
-    description: "Engineered a scalable production-ready MLOps platform by containerizing Flask application and CNN model.",
-    highlights: [
-      "Deployed to highly available EKS cluster using Terraform",
-      "Implemented horizontal pod autoscaling (HPA)",
-      "Comprehensive observability with Prometheus and CloudWatch"
-    ]
-  }
+    number: "04",
+    title: "Distributed MCP Server",
+    type: "Agents / Infrastructure",
+    description: "Async MCP server connecting Jira and Confluence workflows to a Llama-powered natural language interface with distributed locking.",
+    result: "95% command accuracy · 60% fewer tokens",
+    stack: "Python · AsyncIO · Redis · Llama 3.2",
+    icon: GitBranch,
+    href: "https://github.com/AmbadeAtharva/jira-slack-mcp",
+  },
+  {
+    number: "05",
+    title: "We-Recruit-Real",
+    type: "Product / Applied AI",
+    description: "Candidate evaluation platform that analyzes resumes, generates interview questions, and scores transcripts for consistency.",
+    result: "End-to-end AI evaluation",
+    stack: "FastAPI · React · PostgreSQL · Groq",
+    icon: FileSearch,
+    href: "https://recruit-the-real.vercel.app/",
+  },
+  {
+    number: "06",
+    title: "Exam Integrity Monitor",
+    type: "Research / Computer vision",
+    description: "Peer-reviewed ICINC 2021 research evolved into a Dockerized, autoscaling Flask service for real-time exam integrity monitoring.",
+    result: "99.25% model confidence",
+    stack: "Python · MobileNetV2 · OpenCV · Kubernetes",
+    icon: LockKeyhole,
+    href: "https://github.com/AmbadeAtharva/Plagiarism_Detection_Web",
+  },
 ];
 
-const Projects = () => {
-  return (
-    <section id="projects" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            Innovative solutions leveraging AI, Cloud, and Modern Software Architecture
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, idx) => {
-            const Icon = project.icon;
-            return (
-              <Card
-                key={idx}
-                className="p-8 hover:shadow-soft transition-smooth hover:-translate-y-1 bg-card/80 backdrop-blur-sm border-2"
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-white flex-shrink-0">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-2">{project.title}</h3>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {project.tags.map((tag, tagIdx) => (
-                        <Badge key={tagIdx} variant="secondary" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <p className="text-foreground/80 mb-4">{project.description}</p>
-
-                <ul className="space-y-2">
-                  {project.highlights.map((highlight, hIdx) => (
-                    <li key={hIdx} className="flex items-start gap-2 text-sm text-foreground/70">
-                      <span className="text-primary font-bold mt-0.5">•</span>
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-};
+const Projects = () => (
+  <section id="projects" className="section projects-section">
+    <div className="section-heading split-heading">
+      <div><p className="section-kicker">03 / Things I&apos;ve built</p><h2>Curiosity, made <span>concrete.</span></h2></div>
+      <p className="heading-aside">A selection spanning low-level performance work, developer infrastructure, and AI-native products.</p>
+    </div>
+    <div className="project-grid">
+      {projects.map(({ icon: Icon, ...project }) => (
+        <a className="project-card" href={project.href} target="_blank" rel="noopener noreferrer" key={project.title}>
+          <div className="project-topline"><span>{project.number}</span><Icon size={21} strokeWidth={1.4} /></div>
+          <p className="project-type">{project.type}</p>
+          <h3>{project.title}</h3>
+          <p className="project-description">{project.description}</p>
+          <div className="project-bottom"><span className="project-result">{project.result}</span><ArrowUpRight size={18} /></div>
+          <p className="project-stack">{project.stack}</p>
+        </a>
+      ))}
+    </div>
+    <div className="projects-cta"><span>More experiments live on GitHub.</span><a className="text-link" href="https://github.com/AmbadeAtharva" target="_blank" rel="noopener noreferrer">Browse repository <ArrowUpRight size={16} /></a></div>
+  </section>
+);
 
 export default Projects;

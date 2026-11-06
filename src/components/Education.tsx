@@ -1,92 +1,34 @@
-import { Card } from "@/components/ui/card";
-import { GraduationCap, Calendar } from "lucide-react";
+import { ArrowUpRight, Award, GraduationCap } from "lucide-react";
 
-const education = [
-  {
-    degree: "Master of Science, Computer Science",
-    school: "California State University East Bay",
-    period: "August 2024 - May 2026",
-    location: "Hayward, CA",
-    courses: [
-      "Advanced Algorithms",
-      "Advanced Computer Networks",
-      "Operating Systems",
-      "Web Systems",
-      "Cloud Computing",
-      "Advanced AI",
-      "Machine Learning",
-      "System Design"
-    ]
-  },
-  {
-    degree: "Bachelor of Engineering, Computer Science",
-    school: "Pune University",
-    period: "August 2017 - May 2021",
-    location: "Pune, India",
-    courses: [
-      "Data Structures and Algorithms",
-      "Database Management",
-      "Assembly Language",
-      "Digital Electronics",
-      "Computer Architecture",
-      "Programming Language Concepts",
-      "Computer Vision"
-    ]
-  }
-];
-
-const Education = () => {
-  return (
-    <section id="education" className="py-20 px-4 bg-card/30">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            Education
-          </h2>
-        </div>
-
-        <div className="space-y-6">
-          {education.map((edu, idx) => (
-            <Card
-              key={idx}
-              className="p-8 hover:shadow-soft transition-smooth hover:-translate-y-1 bg-card/80 backdrop-blur-sm border-2"
-            >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                <div className="flex items-start gap-4 mb-4 md:mb-0">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-white flex-shrink-0">
-                    <GraduationCap className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground">{edu.degree}</h3>
-                    <p className="text-lg text-primary font-semibold">{edu.school}</p>
-                    <p className="text-sm text-muted-foreground">{edu.location}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Calendar className="w-4 h-4" />
-                  <span className="text-sm font-medium">{edu.period}</span>
-                </div>
-              </div>
-
-              <div className="ml-16">
-                <p className="text-sm font-semibold text-foreground mb-2">Relevant Coursework:</p>
-                <div className="flex flex-wrap gap-2">
-                  {edu.courses.map((course, cIdx) => (
-                    <span
-                      key={cIdx}
-                      className="px-3 py-1 bg-muted rounded-full text-xs font-medium text-foreground"
-                    >
-                      {course}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+const Education = () => (
+  <section id="education" className="section education-section">
+    <div className="section-heading"><p className="section-kicker">04 / Foundations</p><h2>Always learning, <span>still shipping.</span></h2></div>
+    <div className="education-grid">
+      <article className="education-card">
+        <GraduationCap size={24} strokeWidth={1.4} />
+        <p className="education-date">AUG 2024 — MAY 2026</p>
+        <h3>M.S. Computer Science</h3>
+        <p>California State University, East Bay</p>
+        <span>GPA 3.8 / 4.0</span>
+        <div className="course-list">Distributed Systems · Advanced Algorithms · Database Systems · Cloud Computing · Advanced AI · System Design</div>
+      </article>
+      <article className="education-card">
+        <GraduationCap size={24} strokeWidth={1.4} />
+        <p className="education-date">AUG 2017 — MAY 2021</p>
+        <h3>B.E. Computer Engineering</h3>
+        <p>Savitribai Phule Pune University</p>
+        <span>GPA 3.5 / 4.0</span>
+        <div className="course-list">Data Structures · Software Engineering · Computer Networks · Operating Systems · Computer Architecture</div>
+      </article>
+      <article className="education-card certification">
+        <Award size={24} strokeWidth={1.4} />
+        <p className="education-date">AUGUST 2026</p>
+        <h3>AMD ROCm Certified Associate</h3>
+        <p>AI / HPC applications on AMD Instinct GPU platforms</p>
+        <a className="text-link" href="https://www.credly.com/badges/304a0ce1-a4ba-45af-a2d0-7776c7c3f652/public_url" target="_blank" rel="noopener noreferrer">View credential <ArrowUpRight size={15} /></a>
+      </article>
+    </div>
+  </section>
+);
 
 export default Education;

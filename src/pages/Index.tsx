@@ -5,19 +5,19 @@ import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import AtharvaBot from "@/components/AtharvaBot";
 
-const Index = () => {
-  return (
-    <div className="min-h-screen">
-      <AnimatedBackground />
-      <Hero />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Education />
-      <Footer />
-    </div>
-  );
-};
+const Index = () => (
+  <div className="portfolio-shell">
+    <AnimatedBackground />
+    <Hero />
+    <Skills />
+    <Experience />
+    <Projects />
+    <Education />
+    <Footer />
+    <AtharvaBot />
+  </div>
+);
 
 export default Index;
